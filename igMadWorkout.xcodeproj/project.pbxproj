@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		04EFA5761F1D04230007199F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFA5751F1D04230007199F /* AppDelegate.swift */; };
 		04EFA5781F1D04230007199F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFA5771F1D04230007199F /* ViewController.swift */; };
-		04EFA57B1F1D04240007199F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5791F1D04240007199F /* Main.storyboard */; };
 		04EFA57D1F1D04240007199F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA57C1F1D04240007199F /* Assets.xcassets */; };
-		04EFA5801F1D04240007199F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA57E1F1D04240007199F /* LaunchScreen.storyboard */; };
 		04EFA5851F1D04240007199F /* igMadWorkout WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04EFA5841F1D04240007199F /* igMadWorkout WatchKit App.app */; };
 		04EFA58B1F1D04240007199F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5891F1D04240007199F /* Interface.storyboard */; };
 		04EFA58D1F1D04240007199F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA58C1F1D04240007199F /* Assets.xcassets */; };
@@ -19,6 +17,12 @@
 		04EFA5991F1D04240007199F /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFA5981F1D04240007199F /* InterfaceController.swift */; };
 		04EFA59B1F1D04240007199F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFA59A1F1D04240007199F /* ExtensionDelegate.swift */; };
 		04EFA59D1F1D04240007199F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA59C1F1D04240007199F /* Assets.xcassets */; };
+		04EFA5AE1F1D06BF0007199F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5AC1F1D06BF0007199F /* LaunchScreen.storyboard */; };
+		04EFA5AF1F1D06BF0007199F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5AD1F1D06BF0007199F /* Main.storyboard */; };
+		04EFA5B21F1D08AB0007199F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B11F1D08AB0007199F /* logo.png */; };
+		04EFA5B81F1D0B540007199F /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B51F1D0B540007199F /* GeosansLight.ttf */; };
+		04EFA5B91F1D0B540007199F /* gishabd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B61F1D0B540007199F /* gishabd.ttf */; };
+		04EFA5BA1F1D0B540007199F /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B71F1D0B540007199F /* CaviarDreams_Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +71,7 @@
 		04EFA5721F1D04230007199F /* igMadWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = igMadWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EFA5751F1D04230007199F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EFA5771F1D04230007199F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04EFA57A1F1D04240007199F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04EFA57C1F1D04240007199F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04EFA57F1F1D04240007199F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04EFA5811F1D04240007199F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EFA5841F1D04240007199F /* igMadWorkout WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "igMadWorkout WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EFA58A1F1D04240007199F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -80,6 +82,12 @@
 		04EFA59A1F1D04240007199F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		04EFA59C1F1D04240007199F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EFA59E1F1D04240007199F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04EFA5AC1F1D06BF0007199F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04EFA5AD1F1D06BF0007199F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		04EFA5B11F1D08AB0007199F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		04EFA5B51F1D0B540007199F /* GeosansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeosansLight.ttf; sourceTree = "<group>"; };
+		04EFA5B61F1D0B540007199F /* gishabd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gishabd.ttf; sourceTree = "<group>"; };
+		04EFA5B71F1D0B540007199F /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +131,13 @@
 		04EFA5741F1D04230007199F /* igMadWorkout */ = {
 			isa = PBXGroup;
 			children = (
+				04EFA5B41F1D0B450007199F /* fonts */,
+				04EFA5B01F1D089C0007199F /* images */,
 				04EFA5751F1D04230007199F /* AppDelegate.swift */,
 				04EFA5771F1D04230007199F /* ViewController.swift */,
-				04EFA5791F1D04240007199F /* Main.storyboard */,
+				04EFA5AC1F1D06BF0007199F /* LaunchScreen.storyboard */,
+				04EFA5AD1F1D06BF0007199F /* Main.storyboard */,
 				04EFA57C1F1D04240007199F /* Assets.xcassets */,
-				04EFA57E1F1D04240007199F /* LaunchScreen.storyboard */,
 				04EFA5811F1D04240007199F /* Info.plist */,
 			);
 			path = igMadWorkout;
@@ -152,6 +162,24 @@
 				04EFA59E1F1D04240007199F /* Info.plist */,
 			);
 			path = "igMadWorkout WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		04EFA5B01F1D089C0007199F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				04EFA5B11F1D08AB0007199F /* logo.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		04EFA5B41F1D0B450007199F /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				04EFA5B51F1D0B540007199F /* GeosansLight.ttf */,
+				04EFA5B61F1D0B540007199F /* gishabd.ttf */,
+				04EFA5B71F1D0B540007199F /* CaviarDreams_Bold.ttf */,
+			);
+			name = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +287,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04EFA5801F1D04240007199F /* LaunchScreen.storyboard in Resources */,
+				04EFA5AF1F1D06BF0007199F /* Main.storyboard in Resources */,
+				04EFA5B21F1D08AB0007199F /* logo.png in Resources */,
+				04EFA5BA1F1D0B540007199F /* CaviarDreams_Bold.ttf in Resources */,
+				04EFA5B81F1D0B540007199F /* GeosansLight.ttf in Resources */,
+				04EFA5AE1F1D06BF0007199F /* LaunchScreen.storyboard in Resources */,
 				04EFA57D1F1D04240007199F /* Assets.xcassets in Resources */,
-				04EFA57B1F1D04240007199F /* Main.storyboard in Resources */,
+				04EFA5B91F1D0B540007199F /* gishabd.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,22 +351,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04EFA5791F1D04240007199F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04EFA57A1F1D04240007199F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		04EFA57E1F1D04240007199F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04EFA57F1F1D04240007199F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		04EFA5891F1D04240007199F /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -511,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = igMadWorkout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = con.sabrinaOuldyounes.igMadWorkout;
@@ -523,6 +540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = igMadWorkout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = con.sabrinaOuldyounes.igMadWorkout;
