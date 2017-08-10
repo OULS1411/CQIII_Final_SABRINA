@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,9 +48,6 @@
                                                 <date key="minimumDate" timeIntervalSinceReferenceDate="468932400">
                                                     <!--2015-11-11 11:00:00 +0000-->
                                                 </date>
-                                                <date key="maximumDate" timeIntervalSinceReferenceDate="500554800">
-                                                    <!--2016-11-11 11:00:00 +0000-->
-                                                </date>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,11 +69,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65X-ti-per">
                                                 <rect key="frame" x="70.5" y="549" width="242" height="88"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reps" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thk-dO-IlJ">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reps" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thk-dO-IlJ" userLabel="The Reps Field">
                                                         <rect key="frame" x="137" y="11" width="97" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="HgT-VH-6iP"/>
+                                                        </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPK-D6-kdN">
                                                         <rect key="frame" x="63" y="49" width="116" height="31"/>
@@ -85,12 +85,18 @@
                                                         <state key="normal" title="HIDE KEYBOARD">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="hideKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hNg-5f-6vp"/>
+                                                        </connections>
                                                     </button>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sets" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amf-9z-c0Q">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sets" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amf-9z-c0Q" userLabel="theSetsField">
                                                         <rect key="frame" x="8" y="11" width="97" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="o6r-zb-QP1"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -103,6 +109,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="216" id="qpy-c6-RSY"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ydr-b1-oa2"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nTW-Pw-I5J"/>
+                                                </connections>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUMBER OF SETS AND REPS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMh-8g-hND">
                                                 <rect key="frame" x="33" y="513" width="318" height="21"/>
@@ -153,23 +163,29 @@
                                 <rect key="frame" x="-4" y="587" width="383" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yn7-IQ-3jX">
-                                        <rect key="frame" x="96" y="0.0" width="96" height="80"/>
+                                        <rect key="frame" x="96.5" y="0.0" width="95.5" height="80"/>
                                         <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="18"/>
                                         <state key="normal" title="DONE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="doneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nBt-xr-7zt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPQ-EM-QNc">
-                                        <rect key="frame" x="192" y="0.0" width="95.5" height="80"/>
+                                        <rect key="frame" x="192" y="0.0" width="96" height="80"/>
                                         <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="18"/>
                                         <state key="normal" title="SYNCH">
                                             <color key="titleColor" red="0.93791002290000003" green="1" blue="0.37591326489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendToWatch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oj7-9o-C3S"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iA-MT-NW2">
-                                        <rect key="frame" x="287.5" y="0.0" width="95.5" height="80"/>
+                                        <rect key="frame" x="288" y="0.0" width="95" height="80"/>
                                         <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="18"/>
                                         <state key="normal" title="&gt;&gt;&gt;">
@@ -182,12 +198,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jr-K2-Rs0">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="96.5" height="80"/>
                                         <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="18"/>
                                         <state key="normal" title="ADD SET">
                                             <color key="titleColor" red="0.93791002290000003" green="1" blue="0.37591326489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addSetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6rv-dN-NFx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -227,6 +246,9 @@
                                             <constraint firstAttribute="width" constant="122" id="GYZ-yX-oIl"/>
                                             <constraint firstAttribute="height" constant="45" id="fG8-uX-xdK"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="saveToClipboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4DQ-NM-fd5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -265,10 +287,18 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="theDatePicker" destination="jNZ-xy-6j9" id="DiZ-pl-BSq"/>
+                        <outlet property="thePickerView" destination="uR5-Ah-0NS" id="8mM-uz-uP2"/>
+                        <outlet property="theRepsField" destination="thk-dO-IlJ" id="dQ5-fU-9EY"/>
+                        <outlet property="theScrollView" destination="xHE-1v-OQT" id="WP9-7x-qJD"/>
+                        <outlet property="theSetsField" destination="amf-9z-c0Q" id="lcD-0N-jRf"/>
+                        <outlet property="theSynchButton" destination="lPQ-EM-QNc" id="aOR-dy-xKd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87" y="407"/>
+            <point key="canvasLocation" x="246" y="420"/>
         </scene>
         <!--Workouts View-->
         <scene sceneID="c79-vv-h3m">
@@ -279,16 +309,20 @@
                         <viewControllerLayoutGuide type="bottom" id="cL4-Nd-fHj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lH7-ZM-IRV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fr8-Vh-gdH">
-                                <rect key="frame" x="20" y="91" width="560" height="413"/>
+                                <rect key="frame" x="16" y="91" width="343" height="480"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ldN-eR-m6X" id="peV-eh-0n4"/>
+                                    <outlet property="delegate" destination="ldN-eR-m6X" id="k38-VJ-iBa"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72F-N7-nPu">
-                                <rect key="frame" x="0.0" y="520" width="150" height="80"/>
+                                <rect key="frame" x="-4" y="587" width="94" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="18"/>
                                 <state key="normal" title="&lt;&lt;&lt;">
@@ -301,7 +335,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="b50-aF-J9T">
-                                <rect key="frame" x="204" y="28" width="193" height="40"/>
+                                <rect key="frame" x="91" y="28" width="193" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="GiT-Tf-oKL"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="193" id="Nes-jf-x9W"/>
@@ -310,7 +344,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZn-ek-lDt">
-                                <rect key="frame" x="450" y="520" width="150" height="80"/>
+                                <rect key="frame" x="285.5" y="587" width="93.5" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="18"/>
                                 <state key="normal" title="EDIT">
@@ -351,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zD-RQ-fyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="377"/>
+            <point key="canvasLocation" x="863" y="420"/>
         </scene>
         <!--Info View-->
         <scene sceneID="qBJ-p8-tzU">
@@ -362,11 +396,11 @@
                         <viewControllerLayoutGuide type="bottom" id="LIY-ST-UpG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xx4-eg-dZX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-6H-SI9">
-                                <rect key="frame" x="0.0" y="520" width="150" height="80"/>
+                                <rect key="frame" x="-4" y="587" width="94" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="bwR-O6-khp"/>
@@ -382,7 +416,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4p-q7-wuC">
-                                <rect key="frame" x="20" y="115" width="300" height="21"/>
+                                <rect key="frame" x="16" y="115" width="300" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="L4X-9I-lWS"/>
                                     <constraint firstAttribute="width" constant="300" id="Ywh-6A-Kjg"/>
@@ -392,14 +426,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="QYp-ij-nS3">
-                                <rect key="frame" x="204" y="28" width="193" height="40"/>
+                                <rect key="frame" x="91" y="28" width="193" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="193" id="Owg-EF-JjH"/>
                                     <constraint firstAttribute="height" constant="40" id="RlT-tV-ZEf"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWi-Lm-mL0">
-                                <rect key="frame" x="450" y="520" width="150" height="80"/>
+                                <rect key="frame" x="285.5" y="587" width="93.5" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="FX5-B7-nJ6"/>
@@ -415,16 +449,23 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h3s-8R-V0s">
-                                <rect key="frame" x="20" y="155" width="560" height="342"/>
+                                <rect key="frame" x="16" y="155" width="343" height="409"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oQ4-g0-2iN" id="vfC-bQ-aD5"/>
+                                    <outlet property="delegate" destination="oQ4-g0-2iN" id="Nbf-dk-bXG"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ze3-ft-fhh">
-                                <rect key="frame" x="225" y="520" width="150" height="80"/>
+                                <rect key="frame" x="140.5" y="587" width="94" height="80"/>
                                 <color key="backgroundColor" red="0.98780167102813721" green="0.29477781057357788" blue="0.23522767424583435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="18"/>
                                 <state key="normal" title="EDIT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reorder:" destination="oQ4-g0-2iN" eventType="touchUpInside" id="EHB-Ku-udi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -450,10 +491,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xWi-Lm-mL0" secondAttribute="trailing" constant="-20" id="pYa-Fp-E5r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoDateLabel" destination="S4p-q7-wuC" id="KCq-wn-kPO"/>
+                        <outlet property="reorderButton" destination="Ze3-ft-fhh" id="pVJ-10-Gtg"/>
+                        <outlet property="theTableView" destination="h3s-8R-V0s" id="vrJ-X1-jAu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpu-Oa-zY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="377"/>
+            <point key="canvasLocation" x="1481" y="420"/>
         </scene>
         <!--Edit View-->
         <scene sceneID="GZG-pZ-W3g">
@@ -464,18 +510,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Tyi-Bx-aYB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vua-Ux-Fcs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="rjq-pJ-jli">
-                                <rect key="frame" x="204" y="28" width="193" height="40"/>
+                                <rect key="frame" x="63.5" y="28" width="193" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4j3-vP-mcg"/>
                                     <constraint firstAttribute="width" constant="193" id="y7l-6G-7a4"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyw-WM-owe">
-                                <rect key="frame" x="0.0" y="520" width="150" height="80"/>
+                                <rect key="frame" x="-4" y="488" width="80" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="ah3-vI-GE1"/>
@@ -491,7 +537,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycP-4x-Wp8">
-                                <rect key="frame" x="450" y="520" width="150" height="80"/>
+                                <rect key="frame" x="244" y="488" width="80" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="gr4-4U-5bf"/>
@@ -507,15 +553,18 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EXERCISE TO ADD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIy-fR-OS6">
-                                <rect key="frame" x="56" y="93" width="488" height="30"/>
+                                <rect key="frame" x="52" y="93" width="216" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mLL-7V-gBe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="My1-CO-wfl" id="dSp-R4-P8s"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waK-82-PVZ">
-                                <rect key="frame" x="204" y="131" width="192" height="30"/>
+                                <rect key="frame" x="64" y="131" width="192" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="XJq-Ic-W29"/>
@@ -524,10 +573,17 @@
                                 <state key="normal" title="ADD">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addExerciseButton:" destination="My1-CO-wfl" eventType="touchUpInside" id="UfO-S6-hB1"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fnk-F1-rIv">
-                                <rect key="frame" x="20" y="187" width="560" height="307"/>
+                                <rect key="frame" x="16" y="187" width="288" height="275"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="My1-CO-wfl" id="pC1-10-ZmP"/>
+                                    <outlet property="delegate" destination="My1-CO-wfl" id="NtK-pD-fbx"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -554,17 +610,21 @@
                             <constraint firstItem="LIy-fR-OS6" firstAttribute="centerX" secondItem="Vua-Ux-Fcs" secondAttribute="centerX" id="zMd-9Y-7xw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addExerciseField" destination="LIy-fR-OS6" id="IUc-Q3-7AG"/>
+                        <outlet property="theTableView" destination="Fnk-F1-rIv" id="dqJ-LZ-wAJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZ1-ta-Tl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131" y="960"/>
+            <point key="canvasLocation" x="694" y="1085"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo.png" width="240" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aSa-9h-yfw"/>
         <segue reference="WG9-OT-pUx"/>
-        <segue reference="mbG-kK-jqz"/>
     </inferredMetricsTieBreakers>
 </document>

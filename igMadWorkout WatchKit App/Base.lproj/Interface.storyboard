@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,14 @@
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="igMadWorkout_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="117" alignment="left" text="Label" id="ank-Gf-Khf"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Button" id="b7W-YD-JvR"/>
+                    </items>
                     <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="ank-Gf-Khf" id="NyB-fq-yqs"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="165" y="124"/>

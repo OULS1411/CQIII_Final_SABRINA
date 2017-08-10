@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04ACED0C1F3CB22C00E482FD /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACED071F3CB22C00E482FD /* InfoView.swift */; };
+		04ACED0D1F3CB22C00E482FD /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACED081F3CB22C00E482FD /* Shared.swift */; };
+		04ACED0E1F3CB22C00E482FD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACED091F3CB22C00E482FD /* TableViewController.swift */; };
+		04ACED0F1F3CB22C00E482FD /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACED0A1F3CB22C00E482FD /* EditView.swift */; };
+		04ACED101F3CB22C00E482FD /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACED0B1F3CB22C00E482FD /* WorkoutsView.swift */; };
 		04EFA5761F1D04230007199F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFA5751F1D04230007199F /* AppDelegate.swift */; };
 		04EFA5781F1D04230007199F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFA5771F1D04230007199F /* ViewController.swift */; };
 		04EFA57D1F1D04240007199F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA57C1F1D04240007199F /* Assets.xcassets */; };
@@ -68,6 +73,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04ACED071F3CB22C00E482FD /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		04ACED081F3CB22C00E482FD /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		04ACED091F3CB22C00E482FD /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		04ACED0A1F3CB22C00E482FD /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		04ACED0B1F3CB22C00E482FD /* WorkoutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		04EFA5721F1D04230007199F /* igMadWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = igMadWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EFA5751F1D04230007199F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EFA5771F1D04230007199F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +147,11 @@
 				04EFA5771F1D04230007199F /* ViewController.swift */,
 				04EFA5AC1F1D06BF0007199F /* LaunchScreen.storyboard */,
 				04EFA5AD1F1D06BF0007199F /* Main.storyboard */,
+				04ACED071F3CB22C00E482FD /* InfoView.swift */,
+				04ACED081F3CB22C00E482FD /* Shared.swift */,
+				04ACED091F3CB22C00E482FD /* TableViewController.swift */,
+				04ACED0A1F3CB22C00E482FD /* EditView.swift */,
+				04ACED0B1F3CB22C00E482FD /* WorkoutsView.swift */,
 				04EFA57C1F1D04240007199F /* Assets.xcassets */,
 				04EFA5811F1D04240007199F /* Info.plist */,
 			);
@@ -322,6 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EFA5781F1D04230007199F /* ViewController.swift in Sources */,
+				04ACED0C1F3CB22C00E482FD /* InfoView.swift in Sources */,
+				04ACED0F1F3CB22C00E482FD /* EditView.swift in Sources */,
+				04ACED0D1F3CB22C00E482FD /* Shared.swift in Sources */,
+				04ACED0E1F3CB22C00E482FD /* TableViewController.swift in Sources */,
+				04ACED101F3CB22C00E482FD /* WorkoutsView.swift in Sources */,
 				04EFA5761F1D04230007199F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +588,7 @@
 				04EFA5A31F1D04240007199F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04EFA5A51F1D04240007199F /* Build configuration list for PBXNativeTarget "igMadWorkout WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +597,7 @@
 				04EFA5A71F1D04240007199F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04EFA5A91F1D04240007199F /* Build configuration list for PBXNativeTarget "igMadWorkout" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +606,7 @@
 				04EFA5AB1F1D04240007199F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
