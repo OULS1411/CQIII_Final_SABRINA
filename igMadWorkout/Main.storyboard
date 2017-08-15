@@ -178,7 +178,7 @@
                                         <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="18"/>
                                         <state key="normal" title="SYNCH">
-                                            <color key="titleColor" red="0.93791002290000003" green="1" blue="0.37591326489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="sendToWatch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oj7-9o-C3S"/>
@@ -357,7 +357,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.24705882352941178" green="0.36078431372549019" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fr8-Vh-gdH" firstAttribute="centerX" secondItem="lH7-ZM-IRV" secondAttribute="centerX" id="2Fg-Au-3wU"/>
                             <constraint firstItem="cL4-Nd-fHj" firstAttribute="top" secondItem="fr8-Vh-gdH" secondAttribute="bottom" constant="96" id="6aC-E2-m9J"/>
@@ -510,18 +510,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Tyi-Bx-aYB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vua-Ux-Fcs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="rjq-pJ-jli">
-                                <rect key="frame" x="63.5" y="28" width="193" height="40"/>
+                                <rect key="frame" x="91" y="28" width="193" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4j3-vP-mcg"/>
                                     <constraint firstAttribute="width" constant="193" id="y7l-6G-7a4"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyw-WM-owe">
-                                <rect key="frame" x="-4" y="488" width="80" height="80"/>
+                                <rect key="frame" x="-4" y="587" width="94" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="ah3-vI-GE1"/>
@@ -537,7 +537,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycP-4x-Wp8">
-                                <rect key="frame" x="244" y="488" width="80" height="80"/>
+                                <rect key="frame" x="285.5" y="587" width="93.5" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="gr4-4U-5bf"/>
@@ -553,7 +553,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EXERCISE TO ADD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIy-fR-OS6">
-                                <rect key="frame" x="52" y="93" width="216" height="30"/>
+                                <rect key="frame" x="52" y="93" width="271" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mLL-7V-gBe"/>
                                 </constraints>
@@ -564,7 +564,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waK-82-PVZ">
-                                <rect key="frame" x="64" y="131" width="192" height="30"/>
+                                <rect key="frame" x="91.5" y="131" width="192" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2952063687" blue="0.2364931921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="XJq-Ic-W29"/>
@@ -578,7 +578,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fnk-F1-rIv">
-                                <rect key="frame" x="16" y="187" width="288" height="275"/>
+                                <rect key="frame" x="16" y="187" width="343" height="374"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="My1-CO-wfl" id="pC1-10-ZmP"/>
@@ -624,7 +624,7 @@
         <image name="logo.png" width="240" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aSa-9h-yfw"/>
-        <segue reference="WG9-OT-pUx"/>
+        <segue reference="GqE-UC-c6f"/>
+        <segue reference="zgh-1j-gTh"/>
     </inferredMetricsTieBreakers>
 </document>

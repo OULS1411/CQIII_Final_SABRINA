@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0480A3271F434E8E00A83BAA /* Geeza Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0480A3261F434E8E00A83BAA /* Geeza Pro Regular.ttf */; };
+		0480A3281F43507B00A83BAA /* Geeza Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0480A3261F434E8E00A83BAA /* Geeza Pro Regular.ttf */; };
+		0480A3291F43507B00A83BAA /* Geeza Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0480A3261F434E8E00A83BAA /* Geeza Pro Regular.ttf */; };
+		0480A32A1F43507E00A83BAA /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B51F1D0B540007199F /* GeosansLight.ttf */; };
+		0480A32B1F43507E00A83BAA /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B51F1D0B540007199F /* GeosansLight.ttf */; };
+		0480A32C1F43508100A83BAA /* gishabd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B61F1D0B540007199F /* gishabd.ttf */; };
+		0480A32D1F43508200A83BAA /* gishabd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B61F1D0B540007199F /* gishabd.ttf */; };
+		0480A32E1F43508500A83BAA /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B71F1D0B540007199F /* CaviarDreams_Bold.ttf */; };
+		0480A32F1F43508500A83BAA /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EFA5B71F1D0B540007199F /* CaviarDreams_Bold.ttf */; };
+		0480A3311F43528000A83BAA /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480A3301F43528000A83BAA /* TableRowController.swift */; };
+		0480A3351F43574A00A83BAA /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480A3341F43574A00A83BAA /* WorkoutController.swift */; };
 		04ACED0C1F3CB22C00E482FD /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACED071F3CB22C00E482FD /* InfoView.swift */; };
 		04ACED0D1F3CB22C00E482FD /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACED081F3CB22C00E482FD /* Shared.swift */; };
 		04ACED0E1F3CB22C00E482FD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACED091F3CB22C00E482FD /* TableViewController.swift */; };
@@ -73,6 +84,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0480A3261F434E8E00A83BAA /* Geeza Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geeza Pro Regular.ttf"; sourceTree = "<group>"; };
+		0480A3301F43528000A83BAA /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowController.swift; sourceTree = "<group>"; };
+		0480A3341F43574A00A83BAA /* WorkoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
 		04ACED071F3CB22C00E482FD /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		04ACED081F3CB22C00E482FD /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		04ACED091F3CB22C00E482FD /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +189,8 @@
 				04EFA59A1F1D04240007199F /* ExtensionDelegate.swift */,
 				04EFA59C1F1D04240007199F /* Assets.xcassets */,
 				04EFA59E1F1D04240007199F /* Info.plist */,
+				0480A3301F43528000A83BAA /* TableRowController.swift */,
+				0480A3341F43574A00A83BAA /* WorkoutController.swift */,
 			);
 			path = "igMadWorkout WatchKit Extension";
 			sourceTree = "<group>";
@@ -190,6 +206,7 @@
 		04EFA5B41F1D0B450007199F /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0480A3261F434E8E00A83BAA /* Geeza Pro Regular.ttf */,
 				04EFA5B51F1D0B540007199F /* GeosansLight.ttf */,
 				04EFA5B61F1D0B540007199F /* gishabd.ttf */,
 				04EFA5B71F1D0B540007199F /* CaviarDreams_Bold.ttf */,
@@ -302,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0480A3271F434E8E00A83BAA /* Geeza Pro Regular.ttf in Resources */,
 				04EFA5AF1F1D06BF0007199F /* Main.storyboard in Resources */,
 				04EFA5B21F1D08AB0007199F /* logo.png in Resources */,
 				04EFA5BA1F1D0B540007199F /* CaviarDreams_Bold.ttf in Resources */,
@@ -316,8 +334,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0480A32A1F43507E00A83BAA /* GeosansLight.ttf in Resources */,
+				0480A3281F43507B00A83BAA /* Geeza Pro Regular.ttf in Resources */,
 				04EFA58D1F1D04240007199F /* Assets.xcassets in Resources */,
+				0480A32E1F43508500A83BAA /* CaviarDreams_Bold.ttf in Resources */,
 				04EFA58B1F1D04240007199F /* Interface.storyboard in Resources */,
+				0480A32C1F43508100A83BAA /* gishabd.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +347,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0480A32B1F43507E00A83BAA /* GeosansLight.ttf in Resources */,
+				0480A32D1F43508200A83BAA /* gishabd.ttf in Resources */,
+				0480A32F1F43508500A83BAA /* CaviarDreams_Bold.ttf in Resources */,
+				0480A3291F43507B00A83BAA /* Geeza Pro Regular.ttf in Resources */,
 				04EFA59D1F1D04240007199F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +377,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EFA59B1F1D04240007199F /* ExtensionDelegate.swift in Sources */,
+				0480A3351F43574A00A83BAA /* WorkoutController.swift in Sources */,
+				0480A3311F43528000A83BAA /* TableRowController.swift in Sources */,
 				04EFA5991F1D04240007199F /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

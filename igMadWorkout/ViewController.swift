@@ -9,16 +9,14 @@
 import UIKit
 import WatchConnectivity
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WCSessionDelegate {
 
     // ============================
     @IBOutlet weak var theDatePicker: UIDatePicker!
     @IBOutlet weak var thePickerView: UIPickerView!
     @IBOutlet weak var theRepsField: UITextField!
-    
     @IBOutlet weak var theSetsField: UITextField!
     @IBOutlet weak var theScrollView: UIScrollView!
-    
     @IBOutlet weak var theSynchButton: UIButton!
     var exerciseAccount: UserDefaults = UserDefaults.standard
     var session: WCSession!
@@ -35,12 +33,13 @@ class ViewController: UIViewController {
         if WCSession.isSupported()
         {
             session = WCSession.default()
-            session!.delegate = self as? WCSessionDelegate //ajouter par moi meme et ajout de ?
+            session!.delegate = self
             session!.activate()
+        
             
             if !session.isPaired
             {
-                self.theSynchButton.alpha = 0.0
+                //self.theSynchButton.alpha = 0.0
             }
         }
         
@@ -60,19 +59,80 @@ class ViewController: UIViewController {
         let unSortedEcerciseKeys = Array(self.exerciseAccountability.keys)
         UIPasteboard.general.string = unSortedEcerciseKeys.joined(separator: ",")
     }
-    // ============================
+      // ============================
+    @available(iOS 9.3, *)
+    public func sessionDidDeactivate(_ session: WCSession) {
+        //..
+    }
+     // ============================
+    @available(iOS 9.3, *)
+    public func sessionDidBecomeInactive(_ session: WCSession) {
+        //..
+    }
+     // ============================
+    @available(iOS 9.3, *)
+    public func session(_ session: WCSession,activationDidCompleteWith activateState: WCSessionActivationState, error: Error?){
+    
+    }
+     // ============================ Le téléphone ne reçoit aucun message (vide)
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        DispatchQueue.main.async { () -> Void in
+        }
+    }
+    
+    // ============================ Envoyer l'information à la montre
     @IBAction func sendToWatch(_ sender: AnyObject)
     {
-        let databaseToSendToWatch = Shared.sharedInstance.getDatabase("db")
-        session.sendMessage(databaseToSendToWatch, replyHandler:
-            { replyMessage in },
-                            errorHandler:
-            {
-                error in
-                // catch any errors here
-                print(error)
-        })
+        
+        var dictToSendToWatch: [String : String ] = [:]
+        
+        
+        for aWorkout in Shared.sharedInstance.theDatabase{
+        
+            let aDate = aWorkout.0
+            let exercises = aWorkout.1
+            var  str = ""
+            for i in 0..<exercises.count {
+            let exerc = Array(exercises[i].keys) [0]
+        
+            str += " \(exerc) : \(exercises[i][exerc]!)\n "
+                
+            }
+            dictToSendToWatch[aDate] = str
+        }
+        sendMessage(aDict: dictToSendToWatch)
+        
+//        let databaseToSendToWatch = Shared.sharedInstance.getDatabase("db")
+//        session.sendMessage(databaseToSendToWatch, replyHandler:
+//            { replyMessage in },
+//                            errorHandler:
+//            {
+//                error in
+//                // catch any errors here
+//                print(error)
+//        })
     }
+    
+       // ============================
+        // Ajouter la func sendMessage
+       // ============================
+
+      // ============================ Function pour envoyer l'information à la montre
+    func sendMessage ( aDict: [String : String]) {
+        let messageToSend = [ "Message" : aDict]
+        
+        session.sendMessage(messageToSend, replyHandler: { (replyMessage) in
+            
+            DispatchQueue.main.async(execute: {() -> Void in
+            
+            })
+        
+        }) {( error ) in
+            print("error: \(error.localizedDescription)")
+        }
+    
+    }//end function
+    
     // ============================
     @IBAction func doneButton(_ sender: UIButton)
     {
@@ -265,10 +325,10 @@ class ViewController: UIViewController {
 }//end class ViewController
 
 
-/*=====================================================================================*/
+//===================== Extension pour que les dates s'affichent correctement dans l'application
 extension Date
 {
-    //convenience
+    
     init(dateString:String) {
         let dateStringFormatter = DateFormatter()
         dateStringFormatter.dateFormat = "yyyy-MM-dd"
@@ -278,11 +338,6 @@ extension Date
     }
 }
 /*=====================================================================================*/
-
-
-
-
-
 // ============================
 
 

@@ -5,6 +5,7 @@ import WatchConnectivity
 //======================================================
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     //--------------------------------------------------
+    @IBOutlet var table: WKInterfaceTable!
     @IBOutlet var messageLabel: WKInterfaceLabel!
     @IBOutlet var sendButton: WKInterfaceButton!
     //-----------
