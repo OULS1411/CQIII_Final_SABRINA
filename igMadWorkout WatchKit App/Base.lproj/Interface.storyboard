@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="gishabd.ttf">
+            <string>Gisha-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -17,8 +22,6 @@
                         <group width="1" height="8" alignment="left" id="sFi-vU-36K"/>
                         <imageView alignment="left" image="logo" id="fu7-0d-Q0m"/>
                         <group width="1" height="8" alignment="left" id="0HY-HX-NYi"/>
-                        <table alignment="left" id="T8M-MA-aGv"/>
-                        <group width="1" height="8" alignment="left" id="dhu-sx-Huc"/>
                         <table alignment="left" id="GNY-fW-Ync">
                             <items>
                                 <tableRow identifier="row" id="4fC-OI-fan" customClass="TableRowController" customModule="igMadWorkout_WatchKit_Extension">
@@ -28,15 +31,15 @@
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="dates" destination="Wo8-CF-bLF" id="C6d-li-HrO"/>
+                                        <outlet property="dates" destination="Wo8-CF-bLF" id="FJJ-Li-ITj"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
-                    <color key="backgroundColor" red="0.24705882352941178" green="0.36078431372549019" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.2470588235" green="0.36078431370000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
-                        <outlet property="table" destination="GNY-fW-Ync" id="SYs-xO-0cG"/>
+                        <outlet property="table" destination="GNY-fW-Ync" id="jfx-aP-7Ja"/>
                     </connections>
                 </controller>
             </objects>
@@ -45,14 +48,19 @@
         <!--page2-->
         <scene sceneID="HW5-kV-mI3">
             <objects>
-                <controller identifier="page2" id="w7K-o7-Eqt" customClass="WorkoutController">
+                <controller identifier="page2" id="w7K-o7-Eqt" customClass="WorkoutController" customModule="igMadWorkout_WatchKit_Extension">
                     <items>
                         <group width="1" height="10" alignment="left" id="1Us-f5-FYW"/>
                         <imageView alignment="left" image="logo" id="cfO-8q-8ES"/>
                         <group width="1" height="8" alignment="left" id="kBN-9l-lUr"/>
-                        <label width="136" height="32" alignment="left" text="Label" id="52a-Dg-baD"/>
+                        <label width="121" alignment="center" text="Label" numberOfLines="100" id="52a-Dg-baD">
+                            <fontDescription key="font" name="Gisha-Bold" family="Gisha" pointSize="11"/>
+                        </label>
                     </items>
                     <color key="backgroundColor" red="0.2470588235" green="0.36078431370000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="displayLabel" destination="52a-Dg-baD" id="xSv-ke-jwn"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="367" y="128"/>

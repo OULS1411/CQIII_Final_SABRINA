@@ -83,7 +83,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     // ============================ Envoyer l'information à la montre
     @IBAction func sendToWatch(_ sender: AnyObject)
     {
-        
+    
         var dictToSendToWatch: [String : String ] = [:]
         
         
@@ -93,7 +93,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             let exercises = aWorkout.1
             var  str = ""
             for i in 0..<exercises.count {
-            let exerc = Array(exercises[i].keys) [0]
+            let exerc = Array(exercises[i].keys)[0]
         
             str += " \(exerc) : \(exercises[i][exerc]!)\n "
                 
@@ -101,16 +101,6 @@ class ViewController: UIViewController, WCSessionDelegate {
             dictToSendToWatch[aDate] = str
         }
         sendMessage(aDict: dictToSendToWatch)
-        
-//        let databaseToSendToWatch = Shared.sharedInstance.getDatabase("db")
-//        session.sendMessage(databaseToSendToWatch, replyHandler:
-//            { replyMessage in },
-//                            errorHandler:
-//            {
-//                error in
-//                // catch any errors here
-//                print(error)
-//        })
     }
     
        // ============================
@@ -147,7 +137,6 @@ class ViewController: UIViewController, WCSessionDelegate {
        
         
         self.theDatePicker.date = newDate
-        
         self.theRepsField.text = ""
         self.theSetsField.text = ""
     }
