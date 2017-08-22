@@ -20,7 +20,7 @@ class EditView: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
-    // ============================
+    // ============================ Bouton pour ajouter un exercice
     @IBAction func addExerciseButton(_ sender: UIButton)
     {
         if self.addExerciseField.text != ""
@@ -31,6 +31,7 @@ class EditView: UIViewController
             self.theTableView.reloadData()
             self.mAlterts("Exercise Added!")
         }
+        self.view.endEditing(true)
     }
     // ============================
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int

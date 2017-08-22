@@ -83,7 +83,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         //-----------
         //  replyHandler(["Message" : conversation])
         //-----------
-    }
+    } 
     //----------- Quand je clique sur une rangé je me rend a une autre interface pages2 et j'envoi l'information
     
     

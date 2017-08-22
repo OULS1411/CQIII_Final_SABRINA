@@ -25,7 +25,6 @@ class TableViewController: UITableViewController
         {
             tempArray.append(a)
         }
-        
         tempArray.remove(at: 0)
         
         return tempArray
@@ -48,7 +47,6 @@ class TableViewController: UITableViewController
                 }
             }
         }
-        
         return arrToReturn
     }
     /* -------------------------------- */
@@ -98,16 +96,14 @@ class TableViewController: UITableViewController
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-
-
-
+    /* -------------------------------- */
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath)
     {
 //        let itemToMove = self.theWorkout[fromIndexPath.row]
 //        self.theWorkout.removeAtIndex(fromIndexPath.row)
 //        self.theWorkout.insert(itemToMove, atIndex: toIndexPath.row)
     }
-
+    /* -------------------------------- */
     func deleteFromDatabase(_ theDate: String, indexToDelete: Int)
     {
         for (a, b) in self.theDatabase
@@ -123,8 +119,7 @@ class TableViewController: UITableViewController
             }
         }
     }
-
-
+    /* -------------------------------- */
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool
     {
         // Return false if you do not want the item to be re-orderable.
@@ -142,7 +137,7 @@ class TableViewController: UITableViewController
     */
     // ============================
 }
-
+    /* -------------------------------- */
 extension UIColor {
     static func colorWithRedValue(redValue: CGFloat, greenValue: CGFloat, blueValue: CGFloat, alpha: CGFloat) -> UIColor {
         return UIColor(red: redValue/255.0, green: greenValue/255.0, blue: blueValue/255.0, alpha: alpha)

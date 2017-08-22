@@ -27,7 +27,9 @@
                                 <tableRow identifier="row" id="4fC-OI-fan" customClass="TableRowController" customModule="igMadWorkout_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="fAD-DK-Ulf">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="Dates" id="Wo8-CF-bLF"/>
+                                            <label alignment="left" verticalAlignment="center" text="Dates" id="Wo8-CF-bLF">
+                                                <fontDescription key="font" name="Gisha-Bold" family="Gisha" pointSize="11"/>
+                                            </label>
                                         </items>
                                     </group>
                                     <connections>
@@ -53,7 +55,7 @@
                         <group width="1" height="10" alignment="left" id="1Us-f5-FYW"/>
                         <imageView alignment="left" image="logo" id="cfO-8q-8ES"/>
                         <group width="1" height="8" alignment="left" id="kBN-9l-lUr"/>
-                        <label width="121" alignment="center" text="Label" numberOfLines="100" id="52a-Dg-baD">
+                        <label width="128" alignment="center" text="Label" numberOfLines="100" id="52a-Dg-baD">
                             <fontDescription key="font" name="Gisha-Bold" family="Gisha" pointSize="11"/>
                         </label>
                     </items>

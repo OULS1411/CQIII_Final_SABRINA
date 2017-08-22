@@ -17,7 +17,6 @@ class Shared: UIViewController
         {
             return false
         }
-        
         return true
     }
     // ============================

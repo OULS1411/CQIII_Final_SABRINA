@@ -288,6 +288,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="saveToClipboardWeak" destination="YhB-se-DUt" id="QcP-ud-9Ka"/>
                         <outlet property="theDatePicker" destination="jNZ-xy-6j9" id="DiZ-pl-BSq"/>
                         <outlet property="thePickerView" destination="uR5-Ah-0NS" id="8mM-uz-uP2"/>
                         <outlet property="theRepsField" destination="thk-dO-IlJ" id="dQ5-fU-9EY"/>
@@ -624,7 +625,7 @@
         <image name="logo.png" width="240" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="mbG-kK-jqz"/>
         <segue reference="WG9-OT-pUx"/>
-        <segue reference="zgh-1j-gTh"/>
     </inferredMetricsTieBreakers>
 </document>

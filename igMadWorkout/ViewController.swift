@@ -1,14 +1,7 @@
-//
-//  ViewController.swift
-//  igMadWorkout
-//
-//  Created by Sabrina Ouldyounes on 17-07-17.
-//  Copyright © 2017 Sabrina Ouldyounes. All rights reserved.
-//
-
+// ============================
 import UIKit
 import WatchConnectivity
-
+// ============================
 class ViewController: UIViewController, WCSessionDelegate {
 
     // ============================
@@ -18,6 +11,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var theSetsField: UITextField!
     @IBOutlet weak var theScrollView: UIScrollView!
     @IBOutlet weak var theSynchButton: UIButton!
+    @IBOutlet weak var saveToClipboardWeak: UIButton!
     var exerciseAccount: UserDefaults = UserDefaults.standard
     var session: WCSession!
     // ============================
@@ -35,31 +29,53 @@ class ViewController: UIViewController, WCSessionDelegate {
             session = WCSession.default()
             session!.delegate = self
             session!.activate()
-        
             
             if !session.isPaired
             {
                 //self.theSynchButton.alpha = 0.0
             }
         }
-        
         self.theExercise = ""
         Shared.sharedInstance.saveOrLoadUserDefaults("db")
         self.thePickerView.selectRow(0, inComponent: 0, animated: false)
         self.saveUserDefaultIfNeeded()
+  
+      
     }
     // ============================
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+        
     }
-    // ============================
+   
+    // ============================  Bouton pour sauvegarder les exercices de l'application par defaut
+    
     @IBAction func saveToClipboard(_ sender: UIButton)
     {
-        let unSortedEcerciseKeys = Array(self.exerciseAccountability.keys)
-        UIPasteboard.general.string = unSortedEcerciseKeys.joined(separator: ",")
+        saveToClipboardWeak.addTarget(self, action: #selector(multipleTap(_:event:)), for: UIControlEvents.touchDownRepeat)
     }
-      // ============================
+    // ============================ Fonction pour sauvegarder les exercices de l'application par defaut en cliquant 3fois sur le logo
+    func multipleTap(_ sender: UIButton, event: UIEvent) {
+        
+        let touch: UITouch = event.allTouches!.first!
+        if (touch.tapCount == 3) {
+            
+            let alert = UIAlertController(title: "Save To Clipboard ...", message: "Really want to save to clipboard?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+                
+                let unSortedEcerciseKeys = Array(self.exerciseAccountability.keys)
+                UIPasteboard.general.string = unSortedEcerciseKeys.joined(separator: ",")
+            }))
+            
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action: UIAlertAction!) in
+            }))
+            
+            present(alert, animated: true, completion: nil)
+        }
+    }
+      // ============================ Methodes pour communiquer avec  la montre
     @available(iOS 9.3, *)
     public func sessionDidDeactivate(_ session: WCSession) {
         //..
@@ -83,9 +99,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     // ============================ Envoyer l'information à la montre
     @IBAction func sendToWatch(_ sender: AnyObject)
     {
-    
         var dictToSendToWatch: [String : String ] = [:]
-        
         
         for aWorkout in Shared.sharedInstance.theDatabase{
         
@@ -102,13 +116,8 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
         sendMessage(aDict: dictToSendToWatch)
     }
-    
-       // ============================
-        // Ajouter la func sendMessage
-       // ============================
-
-      // ============================ Function pour envoyer l'information à la montre
-    func sendMessage ( aDict: [String : String]) {
+    // ============================ Function pour envoyer l'information à la montre
+    func sendMessage( aDict: [String : String]) {
         let messageToSend = [ "Message" : aDict]
         
         session.sendMessage(messageToSend, replyHandler: { (replyMessage) in
@@ -121,11 +130,12 @@ class ViewController: UIViewController, WCSessionDelegate {
             print("error: \(error.localizedDescription)")
         }
     
-    }//end function
+    }
     
     // ============================
     @IBAction func doneButton(_ sender: UIButton)
     {
+        
         self.thePickerView.selectRow(0, inComponent: 0, animated: true)
         
         let todaysDate:Date = Date()
@@ -134,13 +144,11 @@ class ViewController: UIViewController, WCSessionDelegate {
         let DateInFormat:String = dateFormatter.string(from: todaysDate)
         let newDate = Date(dateString:DateInFormat)
         
-       
-        
         self.theDatePicker.date = newDate
         self.theRepsField.text = ""
         self.theSetsField.text = ""
     }
-    // ============================
+    // ============================ Verifier si l'information a été sauverager
     fileprivate func saveUserDefaultIfNeeded()
     {
         //self.exerciseAccount.removeObjectForKey("exercises")
@@ -163,7 +171,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         {
             return false
         }
-        
         return true
     }
     // ============================
@@ -224,17 +231,17 @@ class ViewController: UIViewController, WCSessionDelegate {
         let strDate = dateFormatter.string(from: datePicker.date)
         return strDate
     }
-    // ============================
+    // ============================ Ajouter un exercice
     @IBAction func addSetButton(_ sender: UIButton)
     {
         self.addExercise()
     }
-    // ============================
+    // ============================ Bouton pour cacher le clavier
     @IBAction func hideKeyboard(_ sender: UIButton)
     {
         self.view.endEditing(true)
     }
-    // ============================
+    // ============================ Function pour ajouter un exercice
     fileprivate func addExercise()
     {
         let theExercise = self.theExercise
@@ -288,7 +295,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         self.present(alertController, animated: true, completion: nil)
     }
-    // ============================
+    // ============================  Fonction pour Afficher le workout
     func displayWorkout(_ theDate: String) -> String
     {
         var strForDisplay = ""
@@ -317,7 +324,6 @@ class ViewController: UIViewController, WCSessionDelegate {
 //===================== Extension pour que les dates s'affichent correctement dans l'application
 extension Date
 {
-    
     init(dateString:String) {
         let dateStringFormatter = DateFormatter()
         dateStringFormatter.dateFormat = "yyyy-MM-dd"
@@ -327,7 +333,7 @@ extension Date
     }
 }
 /*=====================================================================================*/
-// ============================
+
 
 
 

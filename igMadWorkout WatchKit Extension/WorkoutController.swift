@@ -1,11 +1,4 @@
-//
-//  WorkoutController.swift
-//  igMadWorkout
-//
-//  Created by Sabrina Ouldyounes on 17-08-15.
-//  Copyright © 2017 Sabrina Ouldyounes. All rights reserved.
-//
-
+//====================
 import Foundation
 import WatchKit
 //=============================
@@ -21,13 +14,7 @@ class WorkoutController: WKInterfaceController {
         let temp = context as? [String : String]
         displayLabel.setText(temp?["workout"])
     }
-    //    override func willActivate() {
-    //        super.willActivate()
-    //    }
-    //    override func didDeactivate() {
-    //        super.didDeactivate()
-    //    }
-    
+        
 }//end class
 
 
