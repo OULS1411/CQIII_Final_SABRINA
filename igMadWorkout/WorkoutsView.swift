@@ -6,38 +6,29 @@ class WorkoutsView: UIViewController
     // ============================
     var theDatabase: [String : [[String : String]]]!
     // ============================
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.theDatabase = Shared.sharedInstance.getDatabase("db")
     }
-    // ============================
-    func getDates() -> [String]
-    {
+    // ============================ Fonction pour recuperer les dates du dictionnaire 
+    func getDates() -> [String] {
         var tempArray = [""]
-        
-        for (a, _) in  self.theDatabase
-        {
+        for (a, _) in  self.theDatabase {
             tempArray.append(a)
         }
-        
         tempArray.remove(at: 0)
-        
         return tempArray
     }
     // ============================
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    // ============================
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    // ============================ Fonction qui retourne nombre de rangée du tableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.theDatabase.count
     }
-    // ============================
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell
-    {
+    // ============================ Fonction qui remplie la tableView
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.default, reuseIdentifier:"cell")
         cell.textLabel!.font = UIFont(name: "Caviar Dreams", size: 18.0)
         cell.textLabel!.text = self.getDates()[indexPath.row]
@@ -47,19 +38,16 @@ class WorkoutsView: UIViewController
         
         return cell
     }
-    // ============================
-    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath)
-    {
+    // ============================ Fonction qui selectionne la rangée de la tableView
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
         let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
         selectedCell.contentView.backgroundColor = UIColor.darkGray
         Shared.sharedInstance.theRow = indexPath.row
         performSegue(withIdentifier: "theSegway", sender: nil)
     }
-    // ============================
-    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: IndexPath)
-    {
-        if editingStyle == UITableViewCellEditingStyle.delete
-        {
+    // ============================ Fonction qui supprime la rangée
+    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
             self.theDatabase[self.getDates()[indexPath.row]] = nil
             Shared.sharedInstance.saveDatabase(self.theDatabase)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)

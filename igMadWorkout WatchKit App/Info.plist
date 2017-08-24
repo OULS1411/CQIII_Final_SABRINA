@@ -22,7 +22,7 @@
 	<string>1</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Geeza Pro Bold.ttf</string>
+		<string>geeza_pro_bold.otf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

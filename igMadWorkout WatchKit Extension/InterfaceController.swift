@@ -6,7 +6,6 @@ import WatchConnectivity
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     //--------------------------------------------------
     @IBOutlet var table: WKInterfaceTable!
-  
     //-----------
     var data: [String : String] = [:]
     var dates: [String] = []
@@ -31,12 +30,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             row.dates.setText(dates[index]) // chercher toutes les dates qui se trouve dans le table dates
         }
     }
-    
-    //--------------------------------------------------
+    //---------------------------------------------
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
     }
-    //--------------------------------------------------
+    //--------------------------------------------- Fonction qui permet de savoir quand ton interface est active
     override func willActivate() {
         //-----------
         super.willActivate()
@@ -48,7 +46,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
         //-----------
         //------------
-        userDefaultManager() //une fois l'application s'execute il fait la gestion des userDefault
+        userDefaultManager() //une fois l'application s'execute il fait la gestion des userDefaults
         //------------
         self.dates = Array(data.keys)
         self.workouts = Array(data.values)
@@ -59,7 +57,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
     //--------------------------------------------------
-
     @available(watchOS 2.2, *)
     public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         //..code
@@ -68,7 +65,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         //-----------
         // Message du téléphone
-        // revoit la valeur de la clé  "Message" convertit si possible en dictionnaire
+        // renvoit la valeur de la clé "Message" convertit, si possible en dictionnaire
         let value = message["Message"] as? [String : String]
         //-----------
         DispatchQueue.main.async{ () -> Void in
@@ -77,21 +74,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             self.dates = Array(value!.keys)
             self.workouts = Array(value!.values) // convertir les valeurs du dictionnaire a un tableau
             self.tableRefresh()
-   
-            
         }
         //-----------
         //  replyHandler(["Message" : conversation])
         //-----------
     } 
-    //----------- Quand je clique sur une rangé je me rend a une autre interface pages2 et j'envoi l'information
-    
-    
+    //----------- Quand je clique sur une rangé je me rend a une autre interface "pages2" et j'envoi l'information
     override func table (_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int){
         self.pushController(withName: "page2", context: ["workout" : workouts[rowIndex]])
     }
-   
-
 }
 //======================================================
 
